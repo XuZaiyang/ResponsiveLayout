@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
+    <style>
+    button#dropdownMenu1 {
+        width: 150px;
+        position: relative;
+        height: 40px;
+    }
+    .caret{
+        position: absolute;
+        left: 131px;
+        top:16px;
+    }
+    </style>
 </head>
 <body>
     <ul class="nav nav-tabs visible-lg">
@@ -19,15 +31,25 @@
     <div class="dropdown visible-xs">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="true">
-            Dropdown
+            <span class="down">选择下拉菜单</span>
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Messages</a></li>
+            <li>Home</li>
+            <li>Profile</li>
+            <li>Messages</li>
         </ul>
     </div>
 </body>
+<script>
+    var btn=document.querySelector('.btn>.down')
+    var lis=document.querySelectorAll('.dropdown-menu>li')
+    for(var i=0;i<lis.length;i++){
+        lis[i].onmouseover=function(){
+            btn.innerText=this.innerText
+        }
+    }
+
+</script>
 
 </html>
