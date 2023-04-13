@@ -44,11 +44,22 @@
 <script>
     var btn=document.querySelector('.btn>.down')
     var lis=document.querySelectorAll('.dropdown-menu>li')
+    var navs=document.querySelectorAll('.nav>li')
+    console.log(navs)
     for(var i=0;i<lis.length;i++){
         lis[i].onmouseover=function(){
             btn.innerText=this.innerText
         }
     }
+    for (let i = 0; i < navs.length; i++) { // 使用let声明
+        navs[i].onclick = () => {
+            for (let j = 0; j < navs.length; j++) {
+                navs[j].className = ''
+            }
+            navs[i].className = 'active'
+        }
+    }
+
 
 </script>
 
